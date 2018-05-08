@@ -28,11 +28,11 @@ $DOCKER_CMD run --rm -v $HOME/.m2:/root/.m2 -v $CODE_DIR:/usr/src/mymaven -w /us
 
 cp $CODE_DIR/target/*.jar $CODE_DIR/docker/carts
 
-for m in ./docker/*/; do
-    REPO=${GROUP}/$(basename $m)
-    $DOCKER_CMD build \
-      --build-arg BUILD_VERSION=$BUILD_VERSION \
-      --build-arg BUILD_DATE=$BUILD_DATE \
-      --build-arg COMMIT=$COMMIT \
-      -t ${REPO}:${COMMIT} $CODE_DIR/$m;
-done;
+#for m in ./docker/*/; do
+#    REPO=eu.gcr.io/taneli-sandbox/carts
+#    $DOCKER_CMD build \
+#      --build-arg BUILD_VERSION=$BUILD_VERSION \
+#      --build-arg BUILD_DATE=$BUILD_DATE \
+#      --build-arg COMMIT=$COMMIT \
+#      -t ${REPO}:${COMMIT} $CODE_DIR/$m;
+#done;
